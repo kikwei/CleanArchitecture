@@ -1,0 +1,9 @@
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Common/bin/Debug/netcoreapp3.1/Common.deps.json
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Common/bin/Debug/netcoreapp3.1/Common.dll
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Common/bin/Debug/netcoreapp3.1/Common.pdb
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Common/obj/Debug/netcoreapp3.1/Common.csprojAssemblyReference.cache
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Common/obj/Debug/netcoreapp3.1/Common.AssemblyInfoInputs.cache
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Common/obj/Debug/netcoreapp3.1/Common.AssemblyInfo.cs
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Common/obj/Debug/netcoreapp3.1/Common.csproj.CoreCompileInputs.cache
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Common/obj/Debug/netcoreapp3.1/Common.dll
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Common/obj/Debug/netcoreapp3.1/Common.pdb

@@ -1,0 +1,12 @@
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Domain/obj/Debug/netcoreapp3.1/Domain.csprojAssemblyReference.cache
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Domain/obj/Debug/netcoreapp3.1/Domain.AssemblyInfoInputs.cache
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Domain/obj/Debug/netcoreapp3.1/Domain.AssemblyInfo.cs
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Domain/obj/Debug/netcoreapp3.1/Domain.csproj.CoreCompileInputs.cache
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Domain/bin/Debug/netcoreapp3.1/Domain.deps.json
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Domain/bin/Debug/netcoreapp3.1/Domain.dll
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Domain/bin/Debug/netcoreapp3.1/Domain.pdb
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Domain/obj/Debug/netcoreapp3.1/Domain.RazorTargetAssemblyInfo.cache
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Domain/obj/Debug/netcoreapp3.1/staticwebassets/Domain.StaticWebAssets.Manifest.cache
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Domain/obj/Debug/netcoreapp3.1/staticwebassets/Domain.StaticWebAssets.xml
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Domain/obj/Debug/netcoreapp3.1/Domain.dll
+/home/kikwei/Projects/Microsoft/ProductsCleanArch/Src/Domain/obj/Debug/netcoreapp3.1/Domain.pdb

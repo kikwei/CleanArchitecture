@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <!-- error CS5001: Program does not contain a static 'Main' method suitable for an entry point .net 3.1 -->
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+
+</Project>
