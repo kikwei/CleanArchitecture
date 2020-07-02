@@ -6,7 +6,7 @@ namespace ProductsCleanArch.Presentation.Controllers
 {
 
     [ApiController]
-    [Route("api/[controller]/[action]")]
+    // [Route("api/[controller]/[action]")]
     public class BaseController : ControllerBase
     {
         private IMediator _mediator;

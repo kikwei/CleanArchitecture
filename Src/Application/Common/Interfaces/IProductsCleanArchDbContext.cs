@@ -10,6 +10,8 @@ namespace ProductsCleanArch.Application.Common.Interfaces
 
         DbSet<Product> Products { get; set; }
 
+        DbSet<User> Users { get; set; }
+
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

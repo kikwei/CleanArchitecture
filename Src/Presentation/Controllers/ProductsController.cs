@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -14,6 +15,8 @@ namespace ProductsCleanArch.Presentation.Controllers
     public class ProductsController : BaseController
     {
         [HttpGet]
+        [Route("api/v1/products/get-products")]
+        [DisplayName("Can Get Products Listing")]
         [AllowAnonymous]
         public async Task<ActionResult<ProductsListVm>> GetProducts()
         {
@@ -22,7 +25,9 @@ namespace ProductsCleanArch.Presentation.Controllers
             return base.Ok(vm);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Route("api/v1/products/get-product/{id}")]
+        [DisplayName("Can Get Single Product")]
         [AllowAnonymous]
         public async Task<ActionResult<ProductVm>> GetProduct(int id)
         {
@@ -31,6 +36,8 @@ namespace ProductsCleanArch.Presentation.Controllers
         }
 
         [HttpPost]
+        [Route("api/v1/products/create-product")]
+        [DisplayName("Can Create Product")]
         public async Task<ActionResult<Product>> Create([FromBody] CreateProductCommand command)
         {
             var product = await Mediator.Send(command);
@@ -38,6 +45,8 @@ namespace ProductsCleanArch.Presentation.Controllers
         }
 
         [HttpPut]
+        [Route("api/v1/products/update-product")]
+        [DisplayName("Can Update Product")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesDefaultResponseType]
         public async Task<IActionResult> Update([FromBody] UpdateProductCommand command)
@@ -47,7 +56,9 @@ namespace ProductsCleanArch.Presentation.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete]
+        [Route("api/v1/products/delete-product/{id}")]
+        [DisplayName("Can Delete Product")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesDefaultResponseType]
 
