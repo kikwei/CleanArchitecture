@@ -12,7 +12,9 @@ namespace ProductsCleanArch.Persistence
             services.AddDbContext<ProductsCleanArchDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("ProductsCleanArchDatabase")));
 
-            services.AddScoped<IProductsCleanArchDbContext>(provider => provider.GetService<ProductsCleanArchDbContext>());
+            // services.AddScoped<IProductsCleanArchDbContext>(provider => provider.GetService<ProductsCleanArchDbContext>());
+
+            services.AddScoped<IProductsCleanArchDbContext, ProductsCleanArchDbContext>();
 
             return services;
         }

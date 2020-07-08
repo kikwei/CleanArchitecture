@@ -13,6 +13,10 @@ using ProductsCleanArch.Application;
 using ProductsCleanArch.Application.Common.Interfaces;
 using ProductsCleanArch.Presentation.Common;
 using ProductsCleanArch.Presentation.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using ProductsCleanArch.Presentation.Authentication;
 
 namespace ProductsCleanArch.Presentation
 {
@@ -30,8 +34,6 @@ namespace ProductsCleanArch.Presentation
         public IWebHostEnvironment Environment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddInfrastructure(Configuration, Environment);
@@ -45,12 +47,33 @@ namespace ProductsCleanArch.Presentation
 
             services.AddHttpContextAccessor();
 
-            services
-                .AddControllersWithViews()
+            services.AddControllers()
                 .AddNewtonsoftJson()
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<IProductsCleanArchDbContext>());
 
             // services.AddRazorPages();
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtKey"])),
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidIssuer = Configuration["JwtIssuer"],
+                    ValidAudience = Configuration["JwtIssuer"],
+                    ClockSkew = TimeSpan.Zero // remove delay of token when expire
+                };
+            });
+            services.AddSingleton<IJwtAuthentication>(new JwtAuthentication(Configuration));
 
             // Customise default API behaviour
             services.Configure<ApiBehaviorOptions>(options =>
@@ -96,13 +119,13 @@ namespace ProductsCleanArch.Presentation
 
             app.UseRouting();
 
-            // app.UseAuthentication();
-            // app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                // endpoints.MapControllerRoute(
+                //     name: "default",
+                //     pattern: "{controller}/{action=Index}/{id?}");
                 endpoints.MapControllers();
             });
         }

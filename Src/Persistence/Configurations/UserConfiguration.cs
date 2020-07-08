@@ -10,6 +10,8 @@ namespace ProductsCleanArch.Persistence.Configurations
         {
             builder.Property(e => e.UserId).HasColumnName("UserID");
             builder.Property(e => e.FullName).IsRequired().HasMaxLength(50);
+            builder.Property(e => e.UserName).IsRequired().HasMaxLength(50);
+            builder.Property(e => e.Email).IsRequired().HasMaxLength(50);
             builder.Property(e => e.Occupation).IsRequired().HasMaxLength(40);
             builder.Property(e => e.Age).IsRequired().HasColumnType("int");
         }

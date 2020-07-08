@@ -4,7 +4,7 @@ using MediatR;
 using ProductsCleanArch.Application.Common.Interfaces;
 using ProductsCleanArch.Domain.Entities;
 
-namespace ProductsCleanArch.Application.Users.Commands
+namespace ProductsCleanArch.Application.Users.Commands.CreateUser
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, User>
     {
@@ -21,7 +21,9 @@ namespace ProductsCleanArch.Application.Users.Commands
             {
                 FullName = request.FullName,
                 Occupation = request.Occupation,
-                Age = request.Age
+                Age = request.Age,
+                Email = request.Email,
+                UserName = request.Email.Split("@")[0]
             };
 
             _context.Users.Add(user);

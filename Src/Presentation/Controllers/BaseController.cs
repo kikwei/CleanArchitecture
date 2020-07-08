@@ -1,12 +1,12 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ProductsCleanArch.Presentation.Controllers
 {
 
     [ApiController]
-    // [Route("api/[controller]/[action]")]
     public class BaseController : ControllerBase
     {
         private IMediator _mediator;

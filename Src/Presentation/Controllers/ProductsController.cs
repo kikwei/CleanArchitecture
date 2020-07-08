@@ -12,12 +12,14 @@ using ProductsCleanArch.Domain.Entities;
 
 namespace ProductsCleanArch.Presentation.Controllers
 {
+
+    [Authorize]
     public class ProductsController : BaseController
     {
         [HttpGet]
         [Route("api/v1/products/get-products")]
         [DisplayName("Can Get Products Listing")]
-        [AllowAnonymous]
+
         public async Task<ActionResult<ProductsListVm>> GetProducts()
         {
             var vm = await Mediator.Send(new GetProductsCommand());
@@ -28,7 +30,6 @@ namespace ProductsCleanArch.Presentation.Controllers
         [HttpGet]
         [Route("api/v1/products/get-product/{id}")]
         [DisplayName("Can Get Single Product")]
-        [AllowAnonymous]
         public async Task<ActionResult<ProductVm>> GetProduct(int id)
         {
             var vm = await Mediator.Send(new GetProductCommand { Id = id });

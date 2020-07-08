@@ -13,10 +13,10 @@ namespace ProductsCleanArch.Persistence
         private readonly ICurrentUserService _currentUserService;
         private readonly IDateTime _dateTime;
 
-        public ProductsCleanArchDbContext(DbContextOptions<ProductsCleanArchDbContext> options)
-            : base(options)
-        {
-        }
+        // public ProductsCleanArchDbContext(DbContextOptions<ProductsCleanArchDbContext> options)
+        //     : base(options)
+        // {
+        // }
 
         public ProductsCleanArchDbContext(
             DbContextOptions<ProductsCleanArchDbContext> options,

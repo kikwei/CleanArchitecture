@@ -10,8 +10,8 @@ using ProductsCleanArch.Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(ProductsCleanArchDbContext))]
-    [Migration("20200701112642_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200708205536_InitCreate")]
+    partial class InitCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,13 +43,11 @@ namespace Persistence.Migrations
 
                     b.Property<string>("ProductName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(40)")
-                        .HasMaxLength(40);
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<decimal>("UnitPrice")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("money")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("money");
 
                     b.HasKey("ProductId");
 
@@ -73,6 +71,11 @@ namespace Persistence.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
@@ -88,6 +91,11 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(40)")
                         .HasMaxLength(40);
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.HasKey("UserId");
 

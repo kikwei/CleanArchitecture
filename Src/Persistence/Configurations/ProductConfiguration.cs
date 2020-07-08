@@ -12,11 +12,11 @@ namespace ProductsCleanArch.Persistence.Configurations
 
             builder.Property(e => e.ProductName)
                 .IsRequired()
-                .HasMaxLength(40);
+                .HasMaxLength(50);
 
-            builder.Property(e => e.UnitPrice)
-                .HasColumnType("money")
-                .HasDefaultValueSql("((0))");
+            builder.Property(e => e.UnitPrice).IsRequired()
+                .HasColumnType("money");
+                // .HasDefaultValueSql("((0))");
         }
     }
 }
